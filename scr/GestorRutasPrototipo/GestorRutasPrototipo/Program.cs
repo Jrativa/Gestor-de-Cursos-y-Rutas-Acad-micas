@@ -146,23 +146,29 @@ namespace Main
             MyQueue<Asignatura> asignaturas = new MyQueue<Asignatura>();
             Console.WriteLine("¿Cuantas asignaturas quieres planificar ?");
             string numero = Console.ReadLine();
-            int n = Int32.Parse(numero);
-            for (int i = 0; i < n; i++)
-            {
-                Console.WriteLine("Nombre de la asignatura:");
-                string nombreAsignatura = Console.ReadLine().ToUpper();
-                Console.WriteLine("Nombre de prerrequisitos(separados por comas):");
-                string prerrequisito = Console.ReadLine().ToUpper().Trim();
-                MyLinkedList<string> prerrequisitos = new MyLinkedList<string>();
-                Asignatura aux = new Asignatura(); aux.nombreAsignatura = nombreAsignatura;
-                foreach (string materia in prerrequisito.Split(","))
+            try { 
+                int n = Int32.Parse(numero);
+                for (int i = 0; i < n; i++)
                 {
-                    prerrequisitos.AddToEnd(materia.Trim());
+                    Console.WriteLine("Nombre de la asignatura:");
+                    string nombreAsignatura = Console.ReadLine().ToUpper();
+                    Console.WriteLine("Nombre de prerrequisitos(separados por comas):");
+                    string prerrequisito = Console.ReadLine().ToUpper().Trim();
+                    MyLinkedList<string> prerrequisitos = new MyLinkedList<string>();
+                    Asignatura aux = new Asignatura(); aux.nombreAsignatura = nombreAsignatura;
+                    foreach (string materia in prerrequisito.Split(","))
+                    {
+                        prerrequisitos.AddToEnd(materia.Trim());
+                    }
+                    aux.NombrePrerrequisito = prerrequisitos;
+                    asignaturas.enqueue(aux);
                 }
-                aux.NombrePrerrequisito = prerrequisitos;
-                asignaturas.enqueue(aux);
+                Organizar(asignaturas);
             }
-            Organizar(asignaturas);
+            catch { 
+                Console.WriteLine("Debe ingresar un numero, intente de nuevo");
+                PedirAsignaturas();
+            } 
         }
         public static int AsignarSemestre(Asignatura asignatura, MyLinkedList<Asignatura> Asignaturas, MyQueue<Asignatura> Asignaturas2)
         {
