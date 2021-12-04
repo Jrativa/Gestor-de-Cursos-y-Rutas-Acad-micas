@@ -1,0 +1,17 @@
+C:\Users\josel\OneDrive\Documentos\Ing.Sis\2021-2\DataStructures\Proyecto\GestorRutasPrototipo\GestorRutasPrototipo\obj\Debug\net6.0\GestorRutasPrototipo.csproj.AssemblyReference.cache
+C:\Users\josel\OneDrive\Documentos\Ing.Sis\2021-2\DataStructures\Proyecto\GestorRutasPrototipo\GestorRutasPrototipo\obj\Debug\net6.0\GestorRutasPrototipo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\josel\OneDrive\Documentos\Ing.Sis\2021-2\DataStructures\Proyecto\GestorRutasPrototipo\GestorRutasPrototipo\obj\Debug\net6.0\GestorRutasPrototipo.AssemblyInfoInputs.cache
+C:\Users\josel\OneDrive\Documentos\Ing.Sis\2021-2\DataStructures\Proyecto\GestorRutasPrototipo\GestorRutasPrototipo\obj\Debug\net6.0\GestorRutasPrototipo.AssemblyInfo.cs
+C:\Users\josel\OneDrive\Documentos\Ing.Sis\2021-2\DataStructures\Proyecto\GestorRutasPrototipo\GestorRutasPrototipo\obj\Debug\net6.0\GestorRutasPrototipo.csproj.CoreCompileInputs.cache
+C:\Users\josel\OneDrive\Documentos\Ing.Sis\2021-2\DataStructures\Proyecto\GestorRutasPrototipo\GestorRutasPrototipo\bin\Debug\net6.0\GestorRutasPrototipo.exe
+C:\Users\josel\OneDrive\Documentos\Ing.Sis\2021-2\DataStructures\Proyecto\GestorRutasPrototipo\GestorRutasPrototipo\bin\Debug\net6.0\GestorRutasPrototipo.deps.json
+C:\Users\josel\OneDrive\Documentos\Ing.Sis\2021-2\DataStructures\Proyecto\GestorRutasPrototipo\GestorRutasPrototipo\bin\Debug\net6.0\GestorRutasPrototipo.runtimeconfig.json
+C:\Users\josel\OneDrive\Documentos\Ing.Sis\2021-2\DataStructures\Proyecto\GestorRutasPrototipo\GestorRutasPrototipo\bin\Debug\net6.0\GestorRutasPrototipo.dll
+C:\Users\josel\OneDrive\Documentos\Ing.Sis\2021-2\DataStructures\Proyecto\GestorRutasPrototipo\GestorRutasPrototipo\bin\Debug\net6.0\ref\GestorRutasPrototipo.dll
+C:\Users\josel\OneDrive\Documentos\Ing.Sis\2021-2\DataStructures\Proyecto\GestorRutasPrototipo\GestorRutasPrototipo\bin\Debug\net6.0\GestorRutasPrototipo.pdb
+C:\Users\josel\OneDrive\Documentos\Ing.Sis\2021-2\DataStructures\Proyecto\GestorRutasPrototipo\GestorRutasPrototipo\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\josel\OneDrive\Documentos\Ing.Sis\2021-2\DataStructures\Proyecto\GestorRutasPrototipo\GestorRutasPrototipo\obj\Debug\net6.0\GestorRutasPrototipo.csproj.CopyComplete
+C:\Users\josel\OneDrive\Documentos\Ing.Sis\2021-2\DataStructures\Proyecto\GestorRutasPrototipo\GestorRutasPrototipo\obj\Debug\net6.0\GestorRutasPrototipo.dll
+C:\Users\josel\OneDrive\Documentos\Ing.Sis\2021-2\DataStructures\Proyecto\GestorRutasPrototipo\GestorRutasPrototipo\obj\Debug\net6.0\ref\GestorRutasPrototipo.dll
+C:\Users\josel\OneDrive\Documentos\Ing.Sis\2021-2\DataStructures\Proyecto\GestorRutasPrototipo\GestorRutasPrototipo\obj\Debug\net6.0\GestorRutasPrototipo.pdb
+C:\Users\josel\OneDrive\Documentos\Ing.Sis\2021-2\DataStructures\Proyecto\GestorRutasPrototipo\GestorRutasPrototipo\obj\Debug\net6.0\GestorRutasPrototipo.genruntimeconfig.cache
