@@ -1,1 +1,1 @@
-# Gestor-de-Cursos-y-Rutas-Acad-micas
+# Gestor-de-Cursos-y-Rutas-Academicas
