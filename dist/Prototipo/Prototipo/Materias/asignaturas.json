@@ -1,0 +1,522 @@
+﻿[
+  {
+    "codigo": 2015168,
+    "nombre": "Fundamentos de matemáticas",
+    "creditos": 4,
+    "obligatoria": true,
+    "prerrequisito": null,
+    "correquisito": null,
+    "componente": "Fundamentación",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2015181,
+    "nombre": "Sistemas numéricos",
+    "creditos": 4,
+    "obligatoria": true,
+    "prerrequisito": "2015168",
+    "correquisito": null,
+    "componente": "Fundamentación",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2025819,
+    "nombre": "Introducción a la teoría de conjuntos",
+    "creditos": 4,
+    "obligatoria": true,
+    "prerrequisito": "2015181",
+    "correquisito": null,
+    "componente": "Fundamentación",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2016377,
+    "nombre": "Cálculo diferencial en una variable",
+    "creditos": 4,
+    "obligatoria": true,
+    "prerrequisito": null,
+    "correquisito": null,
+    "componente": "Fundamentación",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2015556,
+    "nombre": "Cálculo integral en una variable",
+    "creditos": 4,
+    "obligatoria": true,
+    "prerrequisito": "2016377",
+    "correquisito": null,
+    "componente": "Fundamentación",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2015162,
+    "nombre": "Calculo vectorial",
+    "creditos": 4,
+    "obligatoria": true,
+    "prerrequisito": "2015556",
+    "correquisito": null,
+    "componente": "Fundamentación",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2016342,
+    "nombre": "Cálculo de ecuaciones diferenciales ordinarias",
+    "creditos": 4,
+    "obligatoria": true,
+    "prerrequisito": "2015556",
+    "correquisito": null,
+    "componente": "Fundamentación",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2015155,
+    "nombre": "Introducción al análisis real",
+    "creditos": 4,
+    "obligatoria": true,
+    "prerrequisito": "2015162\n2025819",
+    "correquisito": null,
+    "componente": "Fundamentación",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2015555,
+    "nombre": "Álgebra lineal básica",
+    "creditos": 4,
+    "obligatoria": true,
+    "prerrequisito": null,
+    "correquisito": null,
+    "componente": "Fundamentación",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2015152,
+    "nombre": "Grupos y anillos",
+    "creditos": 4,
+    "obligatoria": false,
+    "prerrequisito": "2025819",
+    "correquisito": null,
+    "componente": "Fundamentación",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2015178,
+    "nombre": "Probabilidad",
+    "creditos": 4,
+    "obligatoria": true,
+    "prerrequisito": "2015556",
+    "correquisito": null,
+    "componente": "Fundamentación",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2027312,
+    "nombre": "Introducción al análisis combinatorio",
+    "creditos": 4,
+    "obligatoria": false,
+    "prerrequisito": "2015181",
+    "correquisito": null,
+    "componente": "Fundamentación",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2015184,
+    "nombre": "Teoría de grafos",
+    "creditos": 4,
+    "obligatoria": false,
+    "prerrequisito": "2025819",
+    "correquisito": null,
+    "componente": "Fundamentación",
+    "programas": [2418]
+  },
+  {
+    "codigo": 22689,
+    "nombre": "Fundamentos de física",
+    "creditos": 3,
+    "obligatoria": false,
+    "prerrequisito": null,
+    "correquisito": 2016377,
+    "componente": "Fundamentación",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2016651,
+    "nombre": "Fundamentos de física teórica",
+    "creditos": 3,
+    "obligatoria": false,
+    "prerrequisito": null,
+    "correquisito": 2016377,
+    "componente": "Fundamentación",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2015176,
+    "nombre": "Mecánica newtoniana",
+    "creditos": 4,
+    "obligatoria": false,
+    "prerrequisito": null,
+    "correquisito": 2016377,
+    "componente": "Fundamentación",
+    "programas": [2418]
+  },
+  {
+    "codigo": 1000013,
+    "nombre": "Probabilidad y estadística fundamental",
+    "creditos": 3,
+    "obligatoria": false,
+    "prerrequisito": null,
+    "correquisito": null,
+    "componente": "Fundamentación",
+    "programas": [2418]
+  },
+  {
+    "codigo": 1000010,
+    "nombre": "Biología molecular y celular",
+    "creditos": 3,
+    "obligatoria": false,
+    "prerrequisito": null,
+    "correquisito": null,
+    "componente": "Fundamentación",
+    "programas": [2418]
+  },
+  {
+    "codigo": 1000041,
+    "nombre": "Química básica",
+    "creditos": 3,
+    "obligatoria": false,
+    "prerrequisito": null,
+    "correquisito": null,
+    "componente": "Fundamentación",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2026573,
+    "nombre": "Introducción a las ciencias de la computación y a la programación",
+    "creditos": 3,
+    "obligatoria": true,
+    "prerrequisito": null,
+    "correquisito": null,
+    "componente": "Fundamentación",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2016375,
+    "nombre": "Programación orientada a objetos",
+    "creditos": 3,
+    "obligatoria": true,
+    "prerrequisito": "2026573",
+    "correquisito": null,
+    "componente": "Fundamentación",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2016699,
+    "nombre": "Estructuras de datos",
+    "creditos": 3,
+    "obligatoria": true,
+    "prerrequisito": "2016375",
+    "correquisito": null,
+    "componente": "Fundamentación",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2016696,
+    "nombre": "Algoritmos",
+    "creditos": 3,
+    "obligatoria": true,
+    "prerrequisito": "2016354",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2015174,
+    "nombre": "Introducción a la teoría de la computación",
+    "creditos": 4,
+    "obligatoria": true,
+    "prerrequisito": "2025819",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2026555,
+    "nombre": "Algebra abstracta y computacional",
+    "creditos": 4,
+    "obligatoria": true,
+    "prerrequisito": "2025819",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2027628,
+    "nombre": "Teoría de lenguajes formales",
+    "creditos": 3,
+    "obligatoria": false,
+    "prerrequisito": "2015174",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2027629,
+    "nombre": "Lógica computacional",
+    "creditos": 3,
+    "obligatoria": false,
+    "prerrequisito": "2015174",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2019267,
+    "nombre": "Teoría de la recursión",
+    "creditos": 4,
+    "obligatoria": false,
+    "prerrequisito": "2015174",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2021834,
+    "nombre": "Informática aplicada",
+    "creditos": 3,
+    "obligatoria": false,
+    "prerrequisito": "2026573",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2024065,
+    "nombre": "Mundos virtuales",
+    "creditos": 3,
+    "obligatoria": false,
+    "prerrequisito": "2026573",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2027311,
+    "nombre": "Introducción a la criptografía y a la teoría de información",
+    "creditos": 4,
+    "obligatoria": false,
+    "prerrequisito": "2015178\n2015181",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2027313,
+    "nombre": "Teoría de la codificación",
+    "creditos": 4,
+    "obligatoria": false,
+    "prerrequisito": "2015152",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2027310,
+    "nombre": "Criptografía",
+    "creditos": 3,
+    "obligatoria": false,
+    "prerrequisito": "2027311",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2016698,
+    "nombre": "Elementos de computadores",
+    "creditos": 3,
+    "obligatoria": true,
+    "prerrequisito": "2026573",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2016697,
+    "nombre": "Arquitectura de computadores",
+    "creditos": 3,
+    "obligatoria": false,
+    "prerrequisito": "2016698",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2016707,
+    "nombre": "Sistemas operativos",
+    "creditos": 3,
+    "obligatoria": true,
+    "prerrequisito": "2016698",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2027642,
+    "nombre": "Compiladores",
+    "creditos": 3,
+    "obligatoria": false,
+    "prerrequisito": "2015174",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2015150,
+    "nombre": "Análisis numérico",
+    "creditos": 4,
+    "obligatoria": true,
+    "prerrequisito": "2015155",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2026519,
+    "nombre": "Ecuaciones en diferencias finitas y sistemas dinámicos",
+    "creditos": 4,
+    "obligatoria": false,
+    "prerrequisito": "2016342",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2015173,
+    "nombre": "Introducción a la optimización",
+    "creditos": 4,
+    "obligatoria": false,
+    "prerrequisito": "2015162",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2025971,
+    "nombre": "Optimización",
+    "creditos": 3,
+    "obligatoria": false,
+    "prerrequisito": "2015173",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2027630,
+    "nombre": "Introducción al modelamiento matemático",
+    "creditos": 3,
+    "obligatoria": false,
+    "prerrequisito": "2016342",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2027641,
+    "nombre": "Análisis de bases de datos",
+    "creditos": 3,
+    "obligatoria": false,
+    "prerrequisito": "2016699",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2025196,
+    "nombre": "Introducción a la biología computacional",
+    "creditos": 4,
+    "obligatoria": false,
+    "prerrequisito": "2026573",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2027631,
+    "nombre": "Introducción a la inteligencia artificial",
+    "creditos": 3,
+    "obligatoria": false,
+    "prerrequisito": "2026573",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2027309,
+    "nombre": "Análisis forense digital",
+    "creditos": 4,
+    "obligatoria": false,
+    "prerrequisito": "2027311",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2027632,
+    "nombre": "Física computacional",
+    "creditos": 3,
+    "obligatoria": false,
+    "prerrequisito": "2022689\n2016651\n2015176",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2027643,
+    "nombre": "Introducción al aprendizaje de máquina",
+    "creditos": 3,
+    "obligatoria": false,
+    "prerrequisito": "2015178\n2015174",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2016740,
+    "nombre": "Finanzas computacionales",
+    "creditos": 4,
+    "obligatoria": false,
+    "prerrequisito": "2026573",
+    "correquisito": null,
+    "componente": "Formación Disciplinar o Profesional",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2027633,
+    "nombre": "Trabajo de Grado - Trabajos investigativos",
+    "creditos": 8,
+    "obligatoria": true,
+    "prerrequisito": null,
+    "correquisito": null,
+    "componente": "Trabajo de grado",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2027634,
+    "nombre": "Trabajo de Grado - Asignaturas de Posgrado",
+    "creditos": 8,
+    "obligatoria": true,
+    "prerrequisito": null,
+    "correquisito": null,
+    "componente": "Trabajo de grado",
+    "programas": [2418]
+  },
+  {
+    "codigo": 2027635,
+    "nombre": "Trabajo de Grado - Pasantías",
+    "creditos": 8,
+    "obligatoria": true,
+    "prerrequisito": null,
+    "correquisito": null,
+    "componente": "Trabajo de grado",
+    "programas": [2418]
+  }
+]
