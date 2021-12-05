@@ -12,7 +12,7 @@ namespace Main
 {
     class MateriasMain
     {
-        public static MyLinkedList<Asignatura> Asignaturas = DeserializeJson(LeerJson(@"../../../Materias/asignaturas.json"));
+        public static MyLinkedList<Asignatura> Asignaturas = DeserializeJson(LeerJson(@"../../../asignaturas.json"));
         public static void VolverMenu()
         {
             Console.WriteLine("Presione 1 para volver al menu de opciones, 2 para salir del programa");
