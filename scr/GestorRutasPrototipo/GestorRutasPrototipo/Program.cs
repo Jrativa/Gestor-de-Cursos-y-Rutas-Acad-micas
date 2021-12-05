@@ -182,12 +182,9 @@ namespace Main
                 int semestre = 0;
                 for (int j = 0; j < n; j++)
                 {
-                    int semestreAux = 0;
                     Asignatura aux = BuscarAsignatura(asignatura.NombrePrerrequisito.GetValue(j), Asignaturas);
-                    if (aux == null) break;
                     if (aux == null) { aux = BuscarAsignatura(asignatura.NombrePrerrequisito.GetValue(j), Asignaturas2); }
-                    if (aux.GetSemestre() == 0) { semestreAux = AsignarSemestre(aux, Asignaturas, Asignaturas2); }
-                    else { semestreAux = aux.GetSemestre(); }
+                    int semestreAux = AsignarSemestre(aux, Asignaturas, Asignaturas2);
                     if (semestre == 0 || semestre < semestreAux) { semestre = semestreAux; }
                 }
                 return semestre + 1;
