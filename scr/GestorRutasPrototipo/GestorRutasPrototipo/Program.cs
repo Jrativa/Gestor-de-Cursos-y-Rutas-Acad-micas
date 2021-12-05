@@ -69,7 +69,7 @@ namespace Main
                     VolverMenu();
                     break;
                 case "5":
-                    string disponibles = LeerJson(@"../../../Materias/asignaturas.json");
+                    string disponibles = LeerJson(@"../../../asignaturas.json");
                     Console.WriteLine(disponibles); VolverMenu(); break;
                 default: Console.WriteLine("Opcion invalida, intente  nuevamente"); Menu(); break;
             }
