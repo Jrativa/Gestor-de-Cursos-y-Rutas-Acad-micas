@@ -6,7 +6,7 @@ using EstructurasLineales;
 
 namespace Materias
 {
-    public class Asignatura : OperacionesAsignaturas
+    public class Asignatura : IComparable
     {
         public int? codigo, creditos;
         public int semestre = 0;
@@ -88,9 +88,9 @@ namespace Materias
         }
         public void MostrarInfo()
         {
-            Console.WriteLine("Codigo: " + codigo);
-            Console.WriteLine("Nombre: " + nombreAsignatura);
-            Console.WriteLine("Creditos: " + creditos);
+            Console.Write("Codigo: " + codigo +" ");
+            Console.Write("Nombre: " + nombreAsignatura + " ");
+            Console.Write("Creditos: " + creditos + " ");
             Console.WriteLine("Componente: " + componente);
 
         }
@@ -119,6 +119,28 @@ namespace Materias
         {
             if (codigo == codigo2) { return nombreAsignatura; }
             else { return ""; }
+        }
+
+        //public int CompareTo(Asignatura? other)
+        //{
+        //    int resultado;
+        //    if (other.codigo > this.codigo) { resultado = 1; }
+        //    else if(other.codigo < this.codigo) { resultado = -1; }
+        //    else   resultado = 0;
+        //    return resultado;
+        //}
+
+        
+
+        public int CompareTo(object? obj)
+        {
+            Asignatura temp=(Asignatura?)obj;
+            return this.nombreAsignatura.CompareTo(temp.nombreAsignatura);
+
+        }
+        public override String ToString()
+        {
+            return String.Format("[{0},{1},{2}]", nombreAsignatura, codigo, creditos);
         }
     }
     }

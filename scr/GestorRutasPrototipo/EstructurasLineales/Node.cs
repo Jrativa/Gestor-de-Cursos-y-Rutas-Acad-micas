@@ -9,6 +9,11 @@ namespace EstructurasLineales
             this.data=data;
             this.nextNode=null;
         }
+
+        public Node()
+        {
+        }
+
         public void Print()
         {
             Console.WriteLine(this.data);

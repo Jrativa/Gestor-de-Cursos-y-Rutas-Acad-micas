@@ -6,13 +6,16 @@ using System.Diagnostics;
 using EstructurasLineales;
 using Materias;
 using Newtonsoft.Json;
-
+using GestorRutasPrototipo.Arboles;
+using GestorRutasPrototipo.EstructurasLineales;
+using GestorRutasPrototipo.Hashing;
 
 namespace Main
 {
     class MateriasMain
     {
-        public static MyLinkedList<Asignatura> Asignaturas = DeserializeJson(LeerJson(@"../../../asignaturas.json"));
+        public static TablaHashDirCerrado<Asignatura> Asignaturas = DeserializeJson(LeerJson(@"../../../asignaturas.json"));
+        
         public static void VolverMenu()
         {
             Console.WriteLine("Presione 1 para volver al menu de opciones, 2 para salir del programa");
@@ -25,6 +28,17 @@ namespace Main
                     break;
                 default: VolverMenu(); break;
             }
+        }
+        private static int CodigoASCII(String pKey)
+        {
+            int s = 0;
+            int i= 0;
+            foreach (var c in pKey)
+            {
+                if (i % 2 == 0) { s += (int)c; }
+                i++;
+            }
+            return s;
         }
         public static void Menu()
         {
@@ -44,14 +58,18 @@ namespace Main
                 case "2":
                     Console.WriteLine("Introduzca el nombre de la asignatura que quiere cursar: ");
                     string AsignaturaABuscar2 = (char)(34) + Console.ReadLine() + (char)(34);
-                    Asignatura MateriaEncontrada2 = BuscarAsignatura(AsignaturaABuscar2, Asignaturas);
+                    AsignaturaABuscar2=AsignaturaABuscar2.Replace('á', 'a').Replace('é', 'e').Replace('í', 'i').Replace('ó', 'o').Replace('ú', 'u').ToUpper();
+                    Console.WriteLine(CodigoASCII(AsignaturaABuscar2));
+                    Asignatura MateriaEncontrada2 = Asignaturas.Search(CodigoASCII(AsignaturaABuscar2));
                     SugerirRutas(MateriaEncontrada2);
                     VolverMenu();
                     break;
                 case "3":
                     Console.WriteLine("Introduzca el nombre de la asignatura que quiere buscar: ");
                     string AsignaturaABuscar = (char)(34) + Console.ReadLine() + (char)(34);
-                    Asignatura MateriaEncontrada = BuscarAsignatura(AsignaturaABuscar, Asignaturas);
+                    AsignaturaABuscar2 = AsignaturaABuscar.Replace('á', 'a').Replace('é', 'e').Replace('í', 'i').Replace('ó', 'o').Replace('ú', 'u').ToUpper();
+                    Console.WriteLine(CodigoASCII(AsignaturaABuscar2));
+                    Asignatura MateriaEncontrada = Asignaturas.Search(CodigoASCII(AsignaturaABuscar2));
                     if (MateriaEncontrada != null)
                     {
                         MateriaEncontrada.MostrarInfo();
@@ -64,7 +82,7 @@ namespace Main
                     Console.WriteLine("Introduzca la ruta del directorio donde está su archivo: ");
                     string rutaArchivo = Console.ReadLine();
                     Console.WriteLine("Nombre de su archivo: ");
-                    string nombreArchivo = Console.ReadLine();
+                    String nombreArchivo = Console.ReadLine();
                     LeerArchivo(rutaArchivo + (char)(92) + nombreArchivo + ".txt");
                     VolverMenu();
                     break;
@@ -84,7 +102,6 @@ namespace Main
         public static void LeerArchivo(string rutaArchivo)
         {
             string linea;
-            MyLinkedList<string> renglones = new MyLinkedList<string>();
             try
             {
                 StreamReader lector = new StreamReader(rutaArchivo);
@@ -102,7 +119,7 @@ namespace Main
                 MyStack<string> renglonesApilados10 = new MyStack<string>();
                 while (linea != null)
                 {
-                    renglones.AddToEnd(linea);
+                    
                     switch ((linea.Split(" ")[1]))
                     {
                         case "1": renglonesApilados1.Push(linea); break;
@@ -143,10 +160,11 @@ namespace Main
         }
         public static void PedirAsignaturas()
         {
-            MyQueue<Asignatura> asignaturas = new MyQueue<Asignatura>();
+            ArbolAVL<Asignatura> asignaturas = new ArbolAVL<Asignatura>();
             Console.WriteLine("¿Cuantas asignaturas quieres planificar ?");
             string numero = Console.ReadLine();
-            try { 
+            try
+            {
                 int n = Int32.Parse(numero);
                 for (int i = 0; i < n; i++)
                 {
@@ -161,16 +179,17 @@ namespace Main
                         prerrequisitos.AddToEnd(materia.Trim());
                     }
                     aux.NombrePrerrequisito = prerrequisitos;
-                    asignaturas.enqueue(aux);
+                    asignaturas.Insert(aux);
                 }
                 Organizar(asignaturas);
             }
-            catch { 
+            catch
+            {
                 Console.WriteLine("Debe ingresar un numero, intente de nuevo");
                 PedirAsignaturas();
-            } 
+            }
         }
-        public static int AsignarSemestre(Asignatura asignatura, MyLinkedList<Asignatura> Asignaturas, MyQueue<Asignatura> Asignaturas2)
+        public static int AsignarSemestre(Asignatura asignatura, ArbolAVL<Asignatura> Asignaturas, ArbolAVL<Asignatura> Asignaturas2)
         {
             if (asignatura.NombrePrerrequisito == null || asignatura.NombrePrerrequisito.GetValue(0) == "")
             {
@@ -182,8 +201,8 @@ namespace Main
                 int semestre = 0;
                 for (int j = 0; j < n; j++)
                 {
-                    Asignatura aux = BuscarAsignatura(asignatura.NombrePrerrequisito.GetValue(j), Asignaturas);
-                    if (aux == null) { aux = BuscarAsignatura(asignatura.NombrePrerrequisito.GetValue(j), Asignaturas2); }
+                    Asignatura aux = BuscarAsignatura(asignatura.NombrePrerrequisito.GetValue(j), Asignaturas.root);
+                    if (aux == null) { aux = BuscarAsignatura(asignatura.NombrePrerrequisito.GetValue(j), Asignaturas2.root); }
                     int semestreAux = AsignarSemestre(aux, Asignaturas, Asignaturas2);
                     if (semestre == 0 || semestre < semestreAux) { semestre = semestreAux; }
                 }
@@ -191,9 +210,9 @@ namespace Main
             }
         }
 
-        public static void Organizar(MyQueue<Asignatura> Asignaturas)
+        public static void Organizar(ArbolAVL<Asignatura> Asignaturas)
         {
-            MyQueue<Asignatura> Asignaturas2 = new MyQueue<Asignatura>();
+            ArbolAVL<Asignatura> Asignaturas2 = new ArbolAVL<Asignatura>();
             Console.WriteLine("Introduzca la ruta del directorio donde quiere que se guarde su archivo: ");
             string rutaArchivo = Console.ReadLine();
             Console.WriteLine("Introduzca el nombre para su archivo:");
@@ -203,10 +222,11 @@ namespace Main
                 using (StreamWriter outputFile = new StreamWriter(rutaArchivo + (char)(92) + nombreArchivo + ".txt"))
                 {
                     Asignatura aux1 = new Asignatura();
-                    for (int i = 0; i < Asignaturas.GetLength(); i++)
+                    for (int i = 0; i < Asignaturas.CantidadNodos; i++)
                     {
-                        aux1 = Asignaturas.dequeue(); i--;
-                        Asignaturas2.enqueue(aux1);
+                        aux1 = Asignaturas.root.GetKey();
+                        Asignaturas.eliminar(aux1);
+                        Asignaturas2.Insert(aux1);
                         aux1.SetSemestre(AsignarSemestre(aux1, Asignaturas, Asignaturas2));
                         outputFile.WriteLine("Semestre " + aux1.GetSemestre() + " --- " + aux1.nombreAsignatura);
                     }
@@ -215,7 +235,6 @@ namespace Main
             }
             catch { Console.WriteLine("La ruta ingresada no es valida"); }
         }
-
         public static Asignatura BuscarAsignatura(String Nombre, MyLinkedList<Asignatura> asignaturas)
         {
             int n = asignaturas.GetLength();
@@ -233,6 +252,30 @@ namespace Main
             }
             return null;
         }
+
+        public static Asignatura BuscarAsignatura(String Nombre, NodoAVL<Asignatura> root)
+        {
+            if(root == null) { return null; }
+
+            String aux2 = Nombre.ToLower().Trim();
+            aux2 = aux2.Replace('á', 'a'); aux2 = aux2.Replace('é', 'e'); aux2 = aux2.Replace('í', 'i'); aux2 = aux2.Replace('ó', 'o'); aux2 = aux2.Replace('ú', 'u');
+            String aux = root.Key.nombreAsignatura.ToLower().Trim();
+            aux = aux.Replace('á', 'a'); aux = aux.Replace('é', 'e'); aux = aux.Replace('í', 'i'); aux = aux.Replace('ó', 'o'); aux = aux.Replace('ú', 'u');
+
+            if (aux2.CompareTo(aux) == 0)
+            {
+                return root.Key; 
+            }
+            else if (aux2.CompareTo(aux) < 0)
+            {
+                return BuscarAsignatura(Nombre, root.left);
+            }
+            else 
+            {
+                return BuscarAsignatura(Nombre, root.right);
+            }
+            
+        }
         public static string LeerJson(string ruta)
         {
             string asignaturasFromJson;
@@ -242,9 +285,9 @@ namespace Main
             }
             return asignaturasFromJson;
         }
-        public static MyLinkedList<Asignatura> DeserializeJson(string asignaturasFromJson)
+        public static TablaHashDirCerrado<Asignatura> DeserializeJson(string asignaturasFromJson)
         {
-            MyLinkedList<Asignatura> prueba = new MyLinkedList<Asignatura>();
+            TablaHashDirCerrado<Asignatura> prueba = new TablaHashDirCerrado<Asignatura>(41);
             for (int i = 1; i < asignaturasFromJson.Split("{").Length; i++)
             {
                 int codigoAsignatura = Int32.Parse(asignaturasFromJson.Split("{")[i].Split(',')[0].Split(':')[1]);
@@ -283,7 +326,7 @@ namespace Main
                 }
                 catch { programas = null; }
                 Asignatura aux = new Asignatura(codigoAsignatura, nombreAsignatura, creditos, false, prerrequisito, correquisito, componente, programas);
-                prueba.AddToBeginning(aux);
+                prueba.Insert(aux.nombreAsignatura.Replace('á', 'a').Replace('é', 'e').Replace('í', 'i').Replace('ó', 'o').Replace('ú', 'u').ToUpper().Trim(), aux);
             }
             return prueba;
         }
@@ -298,6 +341,35 @@ namespace Main
                 Console.WriteLine("No hay rutas", e.Message);
             }
         }
+        public static Asignatura BuscarAsignatura(NodoAVL<Asignatura> root, String clave)
+        {
+            NodoAVL < Asignatura > nodo= BuscaAsignaturaEnAVL(root, clave);
+            Asignatura encontrado= new Asignatura();
+            if (nodo!=null) encontrado= nodo.GetKey();
+            return encontrado;
+
+        }
+
+        //Búsqueda recursiva en un AVL
+        private static NodoAVL<Asignatura> BuscaAsignaturaEnAVL(NodoAVL<Asignatura> nodoActual, String clave)
+        {
+            if (nodoActual == null)
+            {
+                return null;
+            }
+            else if (clave.CompareTo(nodoActual.GetKey().nombreAsignatura)==0)
+            {
+                return nodoActual;
+            }
+            else if (clave.CompareTo(nodoActual.GetKey().nombreAsignatura) < 0)
+            {
+                return BuscaAsignaturaEnAVL(nodoActual.left, clave);
+            }
+            else
+            {
+                return BuscaAsignaturaEnAVL(nodoActual.right, clave);
+            }
+        }
 
         static void Main(string[] args)
         {
@@ -305,6 +377,8 @@ namespace Main
             Console.WriteLine("Opciones:");
             Menu();
             Console.WriteLine("Gracias por usar nuestros servicios");
+
+
         }
     }
 }
