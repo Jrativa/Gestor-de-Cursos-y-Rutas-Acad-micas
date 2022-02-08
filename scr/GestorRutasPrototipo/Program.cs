@@ -59,7 +59,6 @@ namespace Main
                     Console.WriteLine("Introduzca el nombre de la asignatura que quiere cursar: ");
                     string AsignaturaABuscar2 = (char)(34) + Console.ReadLine() + (char)(34);
                     AsignaturaABuscar2=AsignaturaABuscar2.Replace('á', 'a').Replace('é', 'e').Replace('í', 'i').Replace('ó', 'o').Replace('ú', 'u').ToUpper();
-                    Console.WriteLine(CodigoASCII(AsignaturaABuscar2));
                     Asignatura MateriaEncontrada2 = Asignaturas.Search(CodigoASCII(AsignaturaABuscar2));
                     SugerirRutas(MateriaEncontrada2);
                     VolverMenu();
